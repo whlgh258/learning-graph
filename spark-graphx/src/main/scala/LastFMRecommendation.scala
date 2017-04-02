@@ -72,5 +72,8 @@ object LastFMRecommendation  {
     evaluator.setLabelCol("rating");
     val rmse = evaluator.evaluate(pred);
     System.out.println("Root Mean Squared Error = " + rmse);
+
+    spark.stop();
+    sc.stop();
   }
 }

@@ -73,6 +73,13 @@ object LastFMRecommendation  {
     val rmse = evaluator.evaluate(pred);
     System.out.println("Root Mean Squared Error = " + rmse);
 
+    println("==============================")
+    val userFactors = mdlReco.userFactors;
+    userFactors.show(10)
+    println(userFactors.head.getList(1).size())
+    println("------------------------------------")
+    val itemFactors = mdlReco.itemFactors;
+    itemFactors.show(10)
     spark.stop();
     sc.stop();
   }
